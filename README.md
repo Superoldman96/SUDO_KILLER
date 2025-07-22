@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/Version-3.0.1-blue)
+![Static Badge](https://img.shields.io/badge/Version-3.0.2-blue)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER/V3)
 ![Static Badge](https://img.shields.io/badge/Maintain-Yes-purple)
 ![Static Badge](https://img.shields.io/badge/Author-TH3xACE-red)
