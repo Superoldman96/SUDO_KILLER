@@ -6,7 +6,7 @@
 # Date of last modification : 25/01/2024
 # @TH3xACE - BLAIS David
 
-version="version 3.0.1"
+version="version 3.0.2"
 
 ##### (Cosmetic) Colour output
 RED="\033[01;31m"    # Issues/Errors
