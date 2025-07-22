@@ -523,6 +523,25 @@ checkcve() {
         echo -e "\n"
       fi
 
+       ### CVE-2025-32462 -Local Privilege Escalation via host option
+    sudohost=$(cat $PWD/CVE/cve.sudover.vuln.txt | grep "$(echo $sver)" | grep "CVE-2025-32462" | cut -d"+" -f 1)
+    if [ "$sudohost" ]; then
+    
+        echo -e "${BOLD}${RED}[-] Potentially vulnerable to CVE-2025-32462${RESET}"
+        echo -e "${BOLD}${GREEN}[+] Sudo’s host (-h or --host) option is intended to be used in conjunction with the list option (-l or --list) to list a user’s sudo privileges on a host other than the current one.${RESET}" 
+        echo -e "${BOLD}${GREEN} However, due to a bug it was not restricted to listing privileges and could be used when running a command via sudo or editing a file with sudoedit.${RESET}"  
+        echo -e "${BOLD}${GREEN} Depending on the rules present in the sudoers file this could allow a local privilege escalation attack (CVE-2025-32462).${RESET}"
+        echo -e "[-] current $sudover | vuln version: 1.8.8 to 1.9.17 inclusive"
+        echo -e "[*] Run one of the command with the configured host (cerebus in the example): "
+        echo -e "sudo -l -h cerebus"
+        echo -e "sudo -h cerebus id"
+        echo -e "[*] Notes: /CVE/CVE-2025-32462/CVE-2025-32462-notes.txt"
+        #echo -e "[*] Exploit: "
+        echo -e "\n"
+    
+      fi
+      
+
       #####  Check for absolute path to sudoedit
       if [ "$cnver" -lt "1008030" ]; then
         sudoeditpathcmd=$(echo "$cmd" 2>/dev/null | grep -E "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit" | cut -d " " -f 8)
