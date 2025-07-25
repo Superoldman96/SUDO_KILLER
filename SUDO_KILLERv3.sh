@@ -523,10 +523,9 @@ checkcve() {
         echo -e "\n"
       fi
 
-    ### CVE-2025-32462 -Local Privilege Escalation via host option
+    ### CVE-2025-32462 - Local Privilege Escalation via host option
     sudohost=$(cat $PWD/CVE/cve.sudover.vuln.txt | grep "$(echo $sver)" | grep "CVE-2025-32462" | cut -d"+" -f 1)
     if [ "$sudohost" ]; then
-    
         echo -e "${BOLD}${RED}[-] Potentially vulnerable to CVE-2025-32462${RESET}"
         echo -e "${BOLD}${GREEN}[+] Sudo’s host (-h or --host) option is intended to be used in conjunction with the list option (-l or --list) to list a user’s sudo privileges on a host other than the current one.${RESET}" 
         echo -e "${BOLD}${GREEN} However, due to a bug it was not restricted to listing privileges and could be used when running a command via sudo or editing a file with sudoedit.${RESET}"  
@@ -539,7 +538,20 @@ checkcve() {
         echo -e "[*] Exploit: refer to the note below for more info and how to gather list of hostnames"
         echo -e "[*] Notes: /CVE/CVE-2025-32462/CVE-2025-32462-notes.txt" 
         echo -e "\n"
-    
+      fi
+
+
+    ### CVE-2025-32463 - Local Privilege Escalation via chroot option
+    sudochroot1=$(cat $PWD/CVE/cve.sudover.vuln.txt | grep "$(echo $sver)" | grep "CVE-2025-32463" | cut -d"+" -f 1)
+    if [ "$sudochroot1" ]; then
+        echo -e "${BOLD}${RED}[-] Potentially vulnerable to CVE-2025-32463${RESET}"
+        echo -e "${BOLD}${GREEN}[+] Sudo’s -R (--chroot) option is intended to allow the user to run a command with a user-selected root directory if the sudoers file allows it. ${RESET}" 
+        echo -e "${BOLD}${GREEN} A change was made in sudo 1.9.14 to resolve paths via chroot() using the user-specified root directory while the sudoers file was still being evaluated. ${RESET}"  
+        echo -e "${BOLD}${GREEN} It is possible for an attacker to trick sudo into loading an arbitrary shared library by creating an /etc/nsswitch.conf file under the user-specified root directory.${RESET}"
+        echo -e "[-] current $sudover | vuln version: 1.9.14 to 1.9.17 inclusive"
+        echo -e "[*] Notes: /CVE/CVE-2025-32463/CVE-2025-32463-notes.txt" 
+        echo -e "[*] Exploit: /CVE/CVE-2025-32463/CVE-2025-32463-exploit.sh"  
+        echo -e "\n"
       fi
       
 
