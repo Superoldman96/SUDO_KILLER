@@ -269,7 +269,12 @@ The playlist can be found here: [https://www.youtube.com/watch?v=Q8iO9mYrfv8&lis
    </a>
 &nbsp;
 </p> 
-
+<p align="center">
+   <a href="https://www.youtube.com/watch?v=FVQc0yoIjHk">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/slide32.png" alt="apis"/>
+   </a>
+&nbsp;
+</p> 
 
 
 
