@@ -523,7 +523,7 @@ checkcve() {
         echo -e "\n"
       fi
 
-       ### CVE-2025-32462 -Local Privilege Escalation via host option
+    ### CVE-2025-32462 -Local Privilege Escalation via host option
     sudohost=$(cat $PWD/CVE/cve.sudover.vuln.txt | grep "$(echo $sver)" | grep "CVE-2025-32462" | cut -d"+" -f 1)
     if [ "$sudohost" ]; then
     
@@ -534,9 +534,10 @@ checkcve() {
         echo -e "[-] current $sudover | vuln version: 1.8.8 to 1.9.17 inclusive"
         echo -e "[*] Run one of the command with the configured host (cerebus in the example): "
         echo -e "sudo -l -h cerebus"
-        echo -e "sudo -h cerebus id"
-        echo -e "[*] Notes: /CVE/CVE-2025-32462/CVE-2025-32462-notes.txt"
-        #echo -e "[*] Exploit: "
+        echo -e "sudo -h cerebus id" 
+        echo -e "[*] Exploit: run ./CVE/CVE-2025-32462/CVE-2025-32462-exploit.sh <List_of_hostnames>"
+        echo -e "[*] Exploit: refer to the note below for more info and how to gather list of hostnames"
+        echo -e "[*] Notes: /CVE/CVE-2025-32462/CVE-2025-32462-notes.txt" 
         echo -e "\n"
     
       fi
