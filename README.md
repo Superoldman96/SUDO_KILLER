@@ -258,13 +258,19 @@ The playlist can be found here: [https://www.youtube.com/watch?v=Q8iO9mYrfv8&lis
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide8.JPG" alt="apis"/>
    </a>
 </p> 
-
+&nbsp;
 <p align="center">
    <a href="https://youtu.be/elwGRlN7aCI">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide6.JPG" alt="apis"/>
    </a>
 &nbsp;
+   <a href="https://youtu.be/usxFNV_kwx8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/slide31.png" alt="apis"/>
+   </a>
+&nbsp;
 </p> 
+
+
 
 
 </details>
