@@ -16,6 +16,12 @@
 
  :bulb: Best Viewed in Dark Mode :)
 
+The project SUDO_KILLER made it to the final for the SANS Difference Award 2023 in the category open-source tool. 
+
+<p align="left">
+    <img width="45%" height="30%" src="https://images.contentstack.io/v3/assets/blt36c2e63521272fdc/blt811f388a9c9f85ab/64c3ab6807e9bc92cd57b0eb/DMA_Awards_-_470x382.jpg" alt="SANS-DMA"/>
+</p>
+
 
 - [Contributing](#contributing)
   - [Stargazers over time](#stargazers-over-time)
